@@ -1,0 +1,76 @@
+---
+title: "FinalReportQ4"
+author: "Blanca Mares"
+date: "11/26/2019"
+output: html_document
+---
+
+```{r include=FALSE,echo=FALSE}
+require(tidyverse)
+require(tigerstats)
+avast <-read.csv(file="avastivironal.csv",header=TRUE)
+avastl <- filter(avast,LGBTQ=="gay")
+
+```
+
+
+#  Question 3 (Straight indviduals)
+
+<!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?!-->
+
+In question 3 our goal is to determine how the AID preventive druh should be working with respect to to each straight indvidual.
+
+\(H_0\):There is no difference in the AID preventive drug that is independent to the LGBTQ of the straight indivduals.
+
+\(H_A\):There is a statistical difference between AID preventive drug  and to those independent to the LGBTQ of the straight indivduals. 
+
+## Methods
+for this question I will be using the barchart and chisq test and the fisher test to decide if there is a correlection between bein a gay person and if the new AIDS drug works.
+<!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
+
+##Results
+
+<!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
+
+We will be using both graphical descriptive and numerical descriptive results.
+
+### Descriptive Results
+
+
+
+#### Graphical Descriptive Results
+
+<!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+We use bar charts to compare Numerical vs Numerical data.
+
+```{r}
+barchartGC(~infected + treatment,data=avastl)
+barchartGC(~infected + treatment,data=avastl,type="percent")
+```
+
+#### Numerical Descriptive Results
+
+<!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+```{r}
+table1 <- xtabs(~infected + treatment, data=avastl)
+rowPerc(table1)
+colPerc(table1)
+```
+According to these stats most white gun owners are also in favor of the death penalty. Statistically the data states if you own a gun you’re in favor of the death penalty
+
+### Inferential Results
+
+<!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+```
+Here we get a P-value of 0.0005, we reject the null hypotheses.
+
+# Discussion and Conclusion
+
+Based on all the test and charts that I have done on this the drug is not effective for gay people. More people that took this drug got this disease.
+
+<!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
