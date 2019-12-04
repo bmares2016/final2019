@@ -1,0 +1,70 @@
+---
+title: "finalreportQ5"
+author: "Blanca Mares"
+date: "11/26/2019"
+output: html_document
+---
+
+# QUESTION 4 (DrugUser)
+
+```{r include=FALSE,echo=FALSE}
+require(tidyverse)
+require(tigerstats)
+avast <-read.csv(file="avastivironal.csv",header=TRUE)
+avastd <- filter(avast,DrugUser=="yes")
+
+```
+
+
+<!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?!-->
+
+In question 4,  our goal is to determine how the AID preventive drug should be working with respect to each DrugUser.
+
+\(H_0\):There is no difference in the AID preventive drug that is independent to DrugUsers.
+
+\(H_A\):There is a statistical difference between AID preventive drug  and to those independent to DrugUsers.
+
+## Methods
+for this question I will be using the barchart and chisq test and the fisher test to decide if there is a correlection between bein a DrugUser person and if the new AIDS drug works.
+<!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
+
+##Results
+
+<!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
+
+We will be using both graphical descriptive and numerical descriptive results.
+
+### Descriptive Results
+
+
+#### Graphical Descriptive Results
+
+<!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+We use bar charts to compare Numerical vs Numerical data.
+
+```{r}
+barchartGC(~infected + treatment,data=avastd)
+barchartGC(~infected + treatment,data=avastd,type="percent")
+
+```
+
+### Numerical Descriptive Results
+
+```{r}
+table1 <- xtabs(~infected + treatment,data=avastd)
+rowPerc(table1)
+colPerc(table1)
+
+```
+Based on the table obove it shows about 24% of drug users that took the drug got the diseas and about 75% of those that took the placebo go the disease.
+
+# Discussion and Conclusion
+
+
+
+<!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+When  it comes to Drug users, it appears that the drug did noy make a significant diffrence in preventing the participants from being infected with AIDS. The 72 people diffrence is not enough to state a diffintive statistical success but when you look at the fact that more than twice as many drug users got the disease while on the placebo than those on the drug, it shows there must be some success in this drug in respect to this subgroup.
+
+
