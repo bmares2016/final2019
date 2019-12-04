@@ -70,7 +70,7 @@ Here we get a P-value of 0.0005, we reject the null hypotheses.
 
 # Discussion and Conclusion
 
-Based on all the test and charts that I have done on this the drug is not effective for gay people. More people that took this drug got this disease.
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
+Based on all the test and charts that I have done on this the drug is not effective for gay people. More people that took this drug got this disease.
