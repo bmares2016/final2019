@@ -82,6 +82,8 @@ Overall, it appears that the drug did not make a significant
 
 # Discussion and Conclusion
 
-This drug is effective for females. Based on the p-value I reject the null hypothies. It is an effective drug.
+
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+When it comes to females, it appears that the drug did not make a significant difference in preventing the woman participants from being infected with AIDS. The 252 people difference ia not enough to state a deffinitive statistical success but when you look at the fact that twice as many women got the disease while on the placebo than those on the drug, it shows there must be some success in this in respect to this subgroup.
